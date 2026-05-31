@@ -40,6 +40,18 @@ datasets/skenario-smallfiles/5worker/500/**
 datasets/skenario-smallfiles/5worker/1000/**
 datasets/skenario-smallfiles/5worker/2000/**
 datasets/skenario-smallfiles/5worker/10000/**
+!datasets/skenario-worker/1worker/.gitkeep
+!datasets/skenario-worker/2worker/.gitkeep
+!datasets/skenario-worker/3worker/.gitkeep
+!datasets/skenario-worker/4worker/.gitkeep
+!datasets/skenario-worker/5worker/.gitkeep
+!datasets/skenario-faulttolerance/workeroff-1/.gitkeep
+!datasets/skenario-faulttolerance/workeroff-2/.gitkeep
+!datasets/skenario-smallfiles/5worker/100/.gitkeep
+!datasets/skenario-smallfiles/5worker/500/.gitkeep
+!datasets/skenario-smallfiles/5worker/1000/.gitkeep
+!datasets/skenario-smallfiles/5worker/2000/.gitkeep
+!datasets/skenario-smallfiles/5worker/10000/.gitkeep
 
 # Monitoring runtime data and experiment snapshots
 monitoring/snapshots/
