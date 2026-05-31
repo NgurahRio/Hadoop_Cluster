@@ -7,9 +7,7 @@ Thumbs.db
 *.swo
 *~
 
-# Java build artifacts
-*.class
-*.jar
+# Java build directories
 target/
 build/
 out/
