@@ -1,0 +1,42 @@
+services:
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    container_name: hadoop-prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.enable-lifecycle
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    extra_hosts:
+      - "master:192.168.33.92"
+      - "worker1:192.168.33.245"
+      - "worker2:192.168.33.249"
+      - "worker3:192.168.33.251"
+      - "worker4:192.168.33.21"
+      - "worker5:192.168.33.22"
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:11.2.2
+    container_name: hadoop-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_DEFAULT_THEME: light
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+volumes:
+  prometheus-data:
+  grafana-data:

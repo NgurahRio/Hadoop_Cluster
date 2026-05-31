@@ -1,0 +1,42 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'hadoop-nodes'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['master:9100']
+        labels:
+          node: 'master'
+          role: 'master'
+
+      - targets: ['worker1:9100']
+        labels:
+          node: 'worker1'
+          role: 'worker'
+
+      - targets: ['worker2:9100']
+        labels:
+          node: 'worker2'
+          role: 'worker'
+
+      - targets: ['worker3:9100']
+        labels:
+          node: 'worker3'
+          role: 'worker'
+
+      - targets: ['worker4:9100']
+        labels:
+          node: 'worker4'
+          role: 'worker'
+
+      - targets: ['worker5:9100']
+        labels:
+          node: 'worker5'
+          role: 'worker'
+
