@@ -82,7 +82,7 @@ URL:
 Login Grafana default:
 
 - User: `admin`
-- Password: `admin`
+- Password: `riyo123`
 
 Dashboard ada di folder Grafana `Hadoop` dengan nama `Hadoop Cluster Overview`.
 

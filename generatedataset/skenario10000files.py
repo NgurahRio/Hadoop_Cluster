@@ -45,7 +45,7 @@ for i in range(1, jumlah_file + 1):
     filename = f"{output_folder}/file_{i:04}.txt"
 
     # setiap file dibuat besar
-    selected_sentences = random.choices(sentences, k=10000)
+    selected_sentences = random.choices(sentences, k=500)
 
     text = "\n".join(selected_sentences)
 

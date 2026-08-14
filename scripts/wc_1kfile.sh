@@ -23,4 +23,4 @@ $WORKERS
 echo
 echo "===== OUTPUT RESULT ====="
 
-hdfs dfs -cat $OUTPUT/part-r-00000 | head
+hdfs dfs -cat $OUTPUT/part-* | head
